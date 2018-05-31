@@ -1,0 +1,1 @@
+# Install-and-Training-Tesseract-4-OCR-Opencv
