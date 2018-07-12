@@ -109,10 +109,11 @@ gedit ~/.bashrc
 ```
 
 Add in the end of file:
-
-* # virtualenv and virtualenvwrapper
-* export WORKON_HOME=$HOME/.virtualenvs
-* source /usr/local/bin/virtualenvwrapper.sh
+```
+# virtualenv and virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/local/bin/virtualenvwrapper.sh
+```
 
 ```
 source ~/.bashrc
@@ -177,19 +178,21 @@ Source: https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract-4.00
 Para treinarmos uma nova fonte no tesseract 4, é necessário baixar o pacote langdata e colar no mesmo diretório do tesseract-master.
 Haverá uma pasta com o nome do idioma que você quer treinar. Nela existe um arquivo com a extensão .training_text. Abra este arquivo e o edite. Coloque palavras e símbolos que estão contidos no documento que você quer treinar. Por exemplo: 
 
-REPÚBLICA 0123456789 FEDERATIVA DO BRASIL MINISTERIO CIDADES 
-NOME DOC. IDENTIDADE /
-OR.G EMISSOR / UF CPF DATA 0123456789 NASCIMENTO 660.007.851-00 0123456789 FILIAÇÃO
-PERMISSÃO ACC CAT CALIDADE REGISTRO 0123456789 HABILITAÇÃO CAT.HAB DOC. CPF DATA
-NASCIMENTO NOME ASSINATURA DETRAN PARAIBA SAO PAULO GOIAS DEPARTAMENTO NACIONAL DE TRANSITO CARTEIRA NASCIONAL DE HABILITAÇÃO CPF NASCIMENTO DATA FGHJKQUVXZ / - . , ; 0123456789 R$
+> REPÚBLICA 0123456789 FEDERATIVA DO BRASIL MINISTERIO CIDADES 
+> NOME DOC. IDENTIDADE /
+> OR.G EMISSOR / UF CPF DATA 0123456789 NASCIMENTO 660.007.851-00 0123456789 FILIAÇÃO
+> PERMISSÃO ACC CAT CALIDADE REGISTRO 0123456789 HABILITAÇÃO CAT.HAB DOC. CPF DATA
+> NASCIMENTO NOME ASSINATURA DETRAN PARAIBA SAO PAULO GOIAS DEPARTAMENTO NACIONAL DE TRANSITO CARTEIRA NASCIONAL DE HABILITAÇÃO CPF NASCIMENTO DATA FGHJKQUVXZ / - . , ; 0123456789 R$
 
 OBSERVAÇÃO: Evite deixar a linha de texto muito comprida, pois isso pode acarretar ao erro Image not trainable, durante a etapa de fine tuning.
 
-Traineddata
+### Traineddata
+
 Após isso, você deve baixar o traineddata que deseja treinar. Este se encontra aqui. Cole o arquivo .traineddata que você escolheu na pasta tesseract-master/tessdata. Caso você escolha alguma variação da linguagem, como por exemplo: por (default), por fast ou por best, apenas substitua o traineddata existente.
+
 OBSERVAÇÃO: é necessário baixar o eng.traineddata e colar em tesseract-master/tessdata. Você encontra-o aqui.
 
-Trainamento
+### Trainamento
 
 OBSERVAÇÃO: Algumas pastas podem vir com nomes um pouco diferente. Exemplo: A pasta tessdata pode estar escrito como tessdata-master. É só adaptar os comandos para o nome correto da pasta.
 
@@ -202,9 +205,11 @@ Este comando irá listar todas as fontes instaladas em seu computador.
 OBS: se necessário, instale o programa text2image.
 
 Train:
+```
 chmod +x tesstrain.sh
 training/tesstrain.sh --fonts_dir /usr/share/fonts --lang <lang> --linedata_only   --noextract_font_properties --langdata_dir ../langdata   --tessdata_dir ../tessdata --output_dir ~/tesstutorial/<lang>_train --fontlist "<font>" 
 (também ajustar o caminho para tessdata e langdata, se necessário)
+```
 
 OBSERVAÇÃO 1: Você pode treinar com mais de uma fonte ao mesmo tempo, passando as fonte no parâmetro --fontlist, Exemplo: --fontlist "<font>" “<font>”.
 
@@ -213,22 +218,27 @@ OBSERVAÇÃO 2: caso seja retornado um erro semelhante a “ERROR: /tmp/tmp.j48O
 Ou que na pasta tessdata esteja faltando eng.traineddata e/ou o seu .traineddata escolhido.
 
 Eval:
+```
 training/tesstrain.sh --fonts_dir /usr/share/fonts --lang <lang> --linedata_only   --noextract_font_properties --langdata_dir ../langdata   --tessdata_dir ./tessdata   --fontlist "<font>" --output_dir ~/tesstutorial/<lang>_eval
+```
 
 OBSERVAÇÃO 3: Você pode treinar com mais de uma fonte ao mesmo tempo, passando as fonte no parâmetro --fontlist, Exemplo: --fontlist "<font>" “<font>”.
 
 Fine tuning:
+```
 sudo mkdir -p ~/tesstutorial/<font>
-
 sudo training/combine_tessdata -e tessdata/<lang>.traineddata   ~/tesstutorial/<font>/<lang>.lstm
-
 sudo training/lstmtraining --model_output ~/tesstutorial/<font>/<font>   --continue_from ~/tesstutorial/<font>/<lang>.lstm   --traineddata tessdata/<lang>.traineddata   --train_listfile ~/tesstutorial/<lang>_eval/<lang>.training_files.txt   --max_iterations 400
+```
 
 OBSERVAÇÃO 4: É recomendado que você troque o parâmetro --max_iterations 400 por --target_error_rate 0
 
 Combine the output files:
+```
 training/lstmtraining --stop_training --continue_from ~/tesstutorial/<font>/<font>_checkpoint --traineddata ~/tesseract-master/tessdata/<lang>.traineddata --model_output ~/tesstutorial/<lang>.traineddata
+```
 
 OBSERVAÇÃO 5: Caso retorne o seguinte erro: “Omgr_.Init(traineddata_path.c_str()):Error:Assert failed:in file ../lstm/lstmtrainer.h, line 110 Segmentation fault (core dumped)”, é provável que você esteja passando o .traineddata errado, ou o caminho para ele esteja errado. Verifique este parâmetro: ~/tesseract-master/tessdata/<lang>.traineddata, pois <lang>.traineddata deve ser o mesmo que você usou desde o início.
 
 Pronto! O seu arquivo traineddata estará salvo aqui: ~/tesstutorial/<lang>.traineddata
+	
