@@ -30,25 +30,28 @@ sudo apt-get install -y libicu-dev
 sudo apt-get install -y libpango1.0-dev
 sudo apt-get install -y libcairo2-dev
 
-Install Leptonica 1.74
-Install it from source code
+### Install Leptonica 1.74
+### Install it from source code
+
 1. Download the source code from Leptonica
 2. Following the instructions to install it.
 
+```
 sudo tar -cd le	xf leptonica-1.76.0.tar.gz
 cd leptonica-1.76.0
 sudo ./configure
 sudo make -j8 (8 is the number of cores, change it if necessary)
 sudo make install
 sudo ldconfig
-Install Tesseract 4.0
+```
+
+### Install Tesseract 4.0
+
 1. Clone the repository Github:
-
-Version tested is 4.00.00alpha:
-
 
 2. Compiling it and install it.
 
+```
 cd tesseract-master
 sudo sh autogen.sh
 sudo ./configure
@@ -59,16 +62,23 @@ sudo make install -langs
 sudo make training
 sudo make training-install
 export LD_LIBRARY_PATH=/usr/local/lib
+```
+### Update ~/.bashrc
 
-####### Update ~/.bashrc #######
-
+```
 gedit ~/.bashrc
+```
+
 Concatenar ao final do arquivo: export TESSDATA_PREFIX=<YOUR PATH>/tesseract-master/tessdata (salve o arquivo).
+
+```
 source ~/.bashrc
 sudo ldconfig
+```
 
-Install Opencv
+### Install Opencv
 
+```
 cd ~
 sudo apt-get update
 sudo apt-get upgrade
@@ -87,21 +97,25 @@ wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 sudo pip install virtualenv virtualenvwrapper
 sudo rm -rf ~/get-pip.py ~/.cache/pip
+```
 
-####### Update ~/.bashrc #######
+### Update ~/.bashrc
 
+```
 gedit ~/.bashrc
+```
 
 Add in the end of file:
-# virtualenv and virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
 
-#############################
+* # virtualenv and virtualenvwrapper
+* export WORKON_HOME=$HOME/.virtualenvs
+* source /usr/local/bin/virtualenvwrapper.sh
 
+```
 source ~/.bashrc
 mkvirtualenv cv -p python3
 sudo pip install numpy
+```
 
 ####### Update /usr/local/include/tesseract/unichar.h #######
 
