@@ -19,6 +19,8 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /u
 ```
 
 ### Install dependency packages
+
+```
 sudo apt-get install -y autoconf automake libtool
 sudo apt-get install -y autoconf-archive
 sudo apt-get install -y pkg-config
@@ -29,6 +31,7 @@ sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libicu-dev
 sudo apt-get install -y libpango1.0-dev
 sudo apt-get install -y libcairo2-dev
+```
 
 ### Install Leptonica 1.74
 ### Install it from source code
@@ -117,48 +120,60 @@ mkvirtualenv cv -p python3
 sudo pip install numpy
 ```
 
-####### Update /usr/local/include/tesseract/unichar.h #######
+### Update /usr/local/include/tesseract/unichar.h 
 
-sudo gedit /usr/local/include/tesseract/unichar.h
-	
+```
+sudo gedit /usr/local/include/tesseract/unichar.h	
+```
+
 If necessary, put “std::” before “string” in the line 164.
 
-###################################################
-
+```
 cd opencv-3.4.1/
 mkdir build
 cd build
+```
 
+```
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local 	-D INSTALL_PYTHON_EXAMPLES=ON 	-D INSTALL_C_EXAMPLES=OFF 	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules 	-D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python 	-D BUILD_EXAMPLES=ON -D WITH_TBB=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_STANDARD=11 ..
+```
 
+```
 make -j8
-
 sudo make install
-
 sudo ldconfig
-Update the files .traineddata
-Para melhor desempenho, faz-se necessário substituir os arquivos traineddata antigos pelas correspondentes versões referentes ao Tesseract 4.  Estes podem ser baixados por aqui: https://github.com/tesseract-ocr/tessdata
+```
 
-Adicionando uma nova fonte
+### Update the files .traineddata
+
+Para melhor desempenho, é necessário substituir os arquivos traineddata antigos pelas correspondentes versões referentes ao Tesseract 4.  
+Estes podem ser baixados por aqui: https://github.com/tesseract-ocr/tessdata
+
+### Adicionando uma nova fonte
 
 Para adicionar uma fonte no Ubuntu, copie sua fonte para:
-/usr/share/fonts/truetype/
+* /usr/share/fonts/truetype/
 
 Você pode usar este comando para copiá-lo: 
+```
 sudo mv sua_fonte.ttf  /usr/share/fonts/truetype/
+```
 
 Para instalar fontes latinas: 
+```
 sudo apt-get install fonts-dejavu gsfonts ttf-mscorefonts-installer
+```
 
 Para saber o nome da sua fonte execute o comando: 
+```
 text2image --fonts_dir /usr/share/fonts --list_available_fonts
+```
 
-
-Treinamento de uma fonte
+### Treinando uma fonte
 
 Source: https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract-4.00
 
-Langdata
+#### Langdata
 Para treinarmos uma nova fonte no tesseract 4, é necessário baixar o pacote langdata e colar no mesmo diretório do tesseract-master.
 Haverá uma pasta com o nome do idioma que você quer treinar. Nela existe um arquivo com a extensão .training_text. Abra este arquivo e o edite. Coloque palavras e símbolos que estão contidos no documento que você quer treinar. Por exemplo: 
 
