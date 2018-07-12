@@ -34,7 +34,7 @@ sudo apt-get install -y libcairo2-dev
 ```
 
 ### Install Leptonica 1.74
-### Install it from source code
+#### Install it from source code
 
 1. Download the source code from Leptonica
 2. Following the instructions to install it.
@@ -127,7 +127,7 @@ sudo pip install numpy
 sudo gedit /usr/local/include/tesseract/unichar.h	
 ```
 
-If necessary, put “std::” before “string” in the line 164.
+Se necessário, coloque “std::” before “string” in the line 164.
 
 ```
 cd opencv-3.4.1/
