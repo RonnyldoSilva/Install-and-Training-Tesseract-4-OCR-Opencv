@@ -120,7 +120,7 @@ mkvirtualenv cv -p python3
 sudo pip install numpy
 ```
 
-### Update /usr/local/include/tesseract/unichar.h 
+##### Update /usr/local/include/tesseract/unichar.h 
 
 ```
 sudo gedit /usr/local/include/tesseract/unichar.h	
