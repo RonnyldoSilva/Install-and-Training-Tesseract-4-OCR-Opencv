@@ -37,12 +37,11 @@ sudo apt-get install -y libcairo2-dev
 ### Install Leptonica 1.74
 #### Install it from source code
 
-1. Download the source code from Leptonica
-2. Following the instructions to install it.
+1. Download the source code from [Leptonica](http://www.leptonica.com/download.html).
+
+2. Following the instructions to install it, extract it:
 
 ```
-sudo tar -cd le	xf leptonica-1.76.0.tar.gz
-
 cd leptonica-1.76.0
 
 sudo ./configure
@@ -53,20 +52,24 @@ sudo ldconfig
 
 ### Install Tesseract 4.0
 
-1. Clone the repository Github:
+1. Clone the [repository Github](https://github.com/tesseract-ocr/tesseract):
 
 2. Compiling it and install it.
 
 ```
 cd tesseract-master
+
 sudo sh autogen.sh
 sudo ./configure
+
 LDFLAGS="-L/usr/local/lib" CFLAGS="-I/usr/local/include"
+
 sudo make -j8
 sudo make install 
 sudo make install -langs
 sudo make training
 sudo make training-install
+
 export LD_LIBRARY_PATH=/usr/local/lib
 ```
 ### Update ~/.bashrc
