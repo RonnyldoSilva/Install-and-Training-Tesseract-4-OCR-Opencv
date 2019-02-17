@@ -52,7 +52,7 @@ sudo ldconfig
 
 ### Install Tesseract 4.0
 
-1. Clone the [repository Github](https://github.com/tesseract-ocr/tesseract):
+1. Clone the [repository from Github](https://github.com/tesseract-ocr/tesseract):
 
 2. Compiling it and install it.
 
