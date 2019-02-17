@@ -7,12 +7,14 @@ sudo apt-get install -y python-dev
 sudo apt-get install -y python
 sudo apt-get install -y python-pip
 sudo apt-get install -y python-setuptools
+
 sudo pip install cython
 ```
 
 ### Upgrade g++5
 ```
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+
 sudo apt-get update
 sudo apt-get upgrade
 ```
@@ -40,7 +42,9 @@ sudo apt-get install -y libcairo2-dev
 
 ```
 sudo tar -cd le	xf leptonica-1.76.0.tar.gz
+
 cd leptonica-1.76.0
+
 sudo ./configure
 sudo make -j8 (8 is the number of cores, change it if necessary)
 sudo make install
@@ -135,7 +139,7 @@ cd build
 ```
 
 ```
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local 	-D INSTALL_PYTHON_EXAMPLES=ON 	-D INSTALL_C_EXAMPLES=OFF 	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules 	-D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python 	-D BUILD_EXAMPLES=ON -D WITH_TBB=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_STANDARD=11 ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python -D BUILD_EXAMPLES=ON -D WITH_TBB=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_STANDARD=11 ..
 ```
 
 ```
