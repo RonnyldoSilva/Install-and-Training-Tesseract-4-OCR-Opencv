@@ -107,8 +107,8 @@ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.
 unzip opencv_contrib.zip
 
 wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
 
+sudo python get-pip.py
 sudo pip install virtualenv virtualenvwrapper
 sudo rm -rf ~/get-pip.py ~/.cache/pip
 ```
