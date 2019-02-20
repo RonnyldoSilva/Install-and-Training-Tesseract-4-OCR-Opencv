@@ -24,12 +24,16 @@ sudo apt-get upgrade
 ```
 sudo apt-get install -y autoconf automake libtool
 sudo apt-get install -y autoconf-archive
+
 sudo apt-get install -y pkg-config
+
 sudo apt-get install -y libpng12-dev
 sudo apt-get install -y libjpeg8-dev
 sudo apt-get install -y libtiff5-dev
+
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libicu-dev
+
 sudo apt-get install -y libpango1.0-dev
 sudo apt-get install -y libcairo2-dev
 ```
@@ -45,6 +49,7 @@ sudo apt-get install -y libcairo2-dev
 cd leptonica-1.76.0
 
 sudo ./configure
+
 sudo make -j8 (8 is the number of cores, change it if necessary)
 sudo make install
 sudo ldconfig
@@ -142,7 +147,9 @@ Se necessário, coloque “std::” before “string” in the line 164.
 
 ```
 cd opencv-3.4.1/
+
 mkdir build
+
 cd build
 ```
 
