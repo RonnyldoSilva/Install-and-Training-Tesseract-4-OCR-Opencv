@@ -83,7 +83,12 @@ export LD_LIBRARY_PATH=/usr/local/lib
 gedit ~/.bashrc
 ```
 
-Concatenar ao final do arquivo: export TESSDATA_PREFIX=<YOUR PATH>/tesseract-master/tessdata (salve o arquivo).
+Concatenar ao final do arquivo: 
+```
+export TESSDATA_PREFIX=<YOUR PATH>/tesseract-master/tessdata 
+```
+
+(salve o arquivo).
 
 ```
 source ~/.bashrc
