@@ -1,4 +1,4 @@
-# How to install Leptonica + Opencv 3 and train Tesseract 4.0
+# How to install Leptonica + Opencv 4.0.0 and train Tesseract 4.0
 
 ### Configure compiling environment
 ```
@@ -110,10 +110,10 @@ sudo apt-get install libxvidcore-dev libx264-dev
 sudo apt-get install libgtk-3-dev
 sudo apt-get install libatlas-base-dev gfortran
 
-wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.4.1.zip 
+wget -O opencv.zip https://github.com/Itseez/opencv/archive/4.0.0.zip 
 unzip opencv.zip
 
-wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.4.1.zip
+wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/4.0.0.zip
 unzip opencv_contrib.zip
 
 wget https://bootstrap.pypa.io/get-pip.py
@@ -159,7 +159,7 @@ cd build
 ```
 
 ```
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-3.4.1/modules -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python -D BUILD_EXAMPLES=ON -D WITH_TBB=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_STANDARD=11 ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.0.0/modules -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python -D BUILD_EXAMPLES=ON -D WITH_TBB=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_STANDARD=11 ..
 ```
 
 OBS: Caso algo dê errado, você pode usar a flag --ignore-errors, para qualquer etapa.
