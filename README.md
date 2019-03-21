@@ -1,4 +1,6 @@
-# How to install Leptonica + Opencv 4.0.0 and train Tesseract 4.0
+# How to install Leptonica, Opencv 4 and train Tesseract 4
+
+:star::star::star::star::star:
 
 ### Configure compiling environment
 ```
