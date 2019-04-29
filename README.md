@@ -2,6 +2,10 @@
 
 :star::star::star::star::star:
 
+### Install python c++ opencv from learnopencv
+
+https://www.learnopencv.com/install-opencv3-on-ubuntu/
+
 ### Configure compiling environment
 ```
 sudo apt-get install -y build-essential
