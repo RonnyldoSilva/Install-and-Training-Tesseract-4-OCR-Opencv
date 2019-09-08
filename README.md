@@ -164,10 +164,10 @@ cd build
 ```
 
 ```
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib-4.0.0/modules -D PYTHON_EXECUTABLE=~/.virtualenvs/cv/bin/python -D BUILD_EXAMPLES=ON -D WITH_TBB=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -D CMAKE_CXX_STANDARD=11 ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE       -D CMAKE_INSTALL_PREFIX=/usr/local       -D INSTALL_C_EXAMPLES=ON       -D INSTALL_PYTHON_EXAMPLES=ON       -D WITH_TBB=ON       -D WITH_V4L=ON       -D WITH_QT=ON       -D WITH_OPENGL=ON       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib-3.2.0/modules       -D BUILD_EXAMPLES=ON .. 
 ```
 
-OBS: Caso algo dê errado, você pode usar a flag --ignore-errors, para qualquer etapa.
+OBS: Caso algo dê errado, você pode usar a flag `--ignore-errors`, para qualquer etapa.
 
 ```
 make -j8
