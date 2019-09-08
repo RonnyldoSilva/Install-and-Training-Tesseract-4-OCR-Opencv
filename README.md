@@ -1,4 +1,4 @@
-# How to install Leptonica, Opencv 4 and train Tesseract 4
+# How to install Leptonica, Opencv 3.2 and train Tesseract 4
 
 :star::star::star::star::star:
 
@@ -115,10 +115,10 @@ sudo apt-get install libxvidcore-dev libx264-dev
 sudo apt-get install libgtk-3-dev
 sudo apt-get install libatlas-base-dev gfortran
 
-wget -O opencv.zip https://github.com/Itseez/opencv/archive/4.0.0.zip 
+wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.2.0.zip 
 unzip opencv.zip
 
-wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/4.0.0.zip
+wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.2.0.zip
 unzip opencv_contrib.zip
 
 wget https://bootstrap.pypa.io/get-pip.py
@@ -156,7 +156,7 @@ sudo gedit /usr/local/include/tesseract/unichar.h
 Se necessário, coloque “std::” before “string” in the line 164.
 
 ```
-cd opencv-3.4.1/
+cd opencv-3.2.0/
 
 mkdir build
 
