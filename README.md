@@ -46,7 +46,7 @@ sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
 ```
 
-###
+### Install Python libraries
 
 ```
 # Install virtual environment
@@ -224,6 +224,8 @@ sudo gedit /usr/local/include/tesseract/unichar.h
 
 Se necessário, coloque “std::” before “string” in the line 164.
 
+### Compile and Install
+
 ```
 cd opencv-3.2.0/
 
@@ -239,8 +241,12 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE       -D CMAKE_INSTALL_PREFIX=/usr/local      
 OBS: Caso algo dê errado, você pode usar a flag `--ignore-errors`, para qualquer etapa.
 
 ```
-make -j8
+# find out number of CPU cores in your machine
+nproc
+# substitute 4 by output of nproc
+make -j4
 sudo make install
+sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
 ```
 
