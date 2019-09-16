@@ -1,4 +1,4 @@
-# How to install Leptonica, Opencv 3.2 and train Tesseract 4
+# How to install Leptonica, Opencv 3.2 and Tesseract 4
 
 :star::star::star::star::star:
 
