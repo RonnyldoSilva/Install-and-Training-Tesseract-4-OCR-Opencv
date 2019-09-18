@@ -128,6 +128,34 @@ sudo make -j8 (8 is the number of cores, change it if necessary)
 sudo make install
 sudo ldconfig
 ```
+### Find "cv2*.so"
+
+```
+find /usr/local/lib/ -type f -name "cv2*.so"
+
+############ For Python 2 ############
+## binary installed in dist-packages
+/usr/local/lib/python2.6/dist-packages/cv2.so
+/usr/local/lib/python2.7/dist-packages/cv2.so
+
+## binary installed in site-packages
+/usr/local/lib/python2.6/site-packages/cv2.so
+/usr/local/lib/python2.7/site-packages/cv2.so
+  
+############ For Python 3 ############
+## binary installed in dist-packages
+/usr/local/lib/python3.5/dist-packages/cv2.cpython-35m-x86_64-linux-gnu.so
+/usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so
+
+## binary installed in site-packages
+/usr/local/lib/python3.5/site-packages/cv2.cpython-35m-x86_64-linux-gnu.so
+/usr/local/lib/python3.6/site-packages/cv2.cpython-36m-x86_64-linux-gnu.so
+```
+
+
+
+
+
 
 ### Install Tesseract 4.0
 
