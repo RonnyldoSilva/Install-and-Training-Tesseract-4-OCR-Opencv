@@ -50,6 +50,9 @@ sudo apt-get install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
 ### Install Python libraries
 
 ```
+sudo apt-get install python-pip
+sudo apt-get install python3-pip
+
 # Install virtual environment
 sudo pip2 install virtualenv virtualenvwrapper
 sudo pip3 install virtualenv virtualenvwrapper
