@@ -157,10 +157,6 @@ find /usr/local/lib/ -type f -name "cv2*.so"
 ```
 
 
-
-
-
-
 ### Install Tesseract 4.0
 
 1. Clone the [repository from Github](https://github.com/tesseract-ocr/tesseract):
@@ -214,6 +210,7 @@ sudo apt-get install libjpeg8-dev libtiff5-dev libjasper-dev libpng12-dev
 sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 sudo apt-get install libxvidcore-dev libx264-dev
 sudo apt-get install libgtk-3-dev
+
 sudo apt-get install libatlas-base-dev gfortran
 
 wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.2.0.zip 
@@ -280,6 +277,18 @@ make -j4
 sudo make install
 sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
+```
+
+### Create symlink in virtual environment
+
+```
+############ For Python 2 ############
+cd ~/.virtualenvs/facecourse-py2/lib/python2.7/site-packages
+ln -s /usr/local/lib/python2.7/dist-packages/cv2.so cv2.so
+  
+############ For Python 3 ############
+cd ~/.virtualenvs/facecourse-py3/lib/python3.6/site-packages
+ln -s /usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so cv2.so
 ```
 
 ### Update the files .traineddata
