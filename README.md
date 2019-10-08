@@ -291,6 +291,14 @@ cd ~/.virtualenvs/facecourse-py3/lib/python3.6/site-packages
 ln -s /usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so cv2.so
 ```
 
+### Test the OpenCV
+
+Download this repository, then unzip RedEyeRemover.zip
+
+```
+
+```
+
 ### Update the files .traineddata
 
 Para melhor desempenho, é necessário substituir os arquivos traineddata antigos pelas correspondentes versões referentes ao Tesseract 4.  
