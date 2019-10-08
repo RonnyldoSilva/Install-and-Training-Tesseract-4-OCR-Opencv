@@ -295,9 +295,20 @@ ln -s /usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so
 
 Download this repository, then unzip RedEyeRemover.zip
 
+Test C++ code:
+```
+# compile
+# There are backticks ( ` ) around pkg-config command not single quotes
+g++ -std=c++11 removeRedEyes.cpp `pkg-config --libs --cflags opencv` -o removeRedEyes
+# run
+./removeRedEyes
+```
+
+Test Python code:
 ```
 
 ```
+
 
 ### Update the files .traineddata
 
