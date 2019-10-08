@@ -293,7 +293,7 @@ ln -s /usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so
 
 ### Test the OpenCV
 
-Download this repository, then unzip RedEyeRemover.zip
+Download this repository, then unzip `RedEyeRemover.zip`. Go to inside it.
 
 Test C++ code:
 ```
@@ -306,7 +306,7 @@ g++ -std=c++11 removeRedEyes.cpp `pkg-config --libs --cflags opencv` -o removeRe
 
 Test Python code:
 ```
-
+python removeRedEyes.py
 ```
 
 
