@@ -2,10 +2,6 @@
 
 :star::star::star::star::star:
 
-### Install python c++ opencv from learnopencv
-
-https://www.learnopencv.com/install-opencv3-on-ubuntu/
-
 ### Update packages
 
 
