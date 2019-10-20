@@ -93,25 +93,6 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-### Install dependency packages
-
-```
-sudo apt-get install -y autoconf automake libtool
-sudo apt-get install -y autoconf-archive
-
-sudo apt-get install -y pkg-config
-
-sudo apt-get install -y libpng12-dev
-sudo apt-get install -y libjpeg8-dev
-sudo apt-get install -y libtiff5-dev
-
-sudo apt-get install -y zlib1g-dev
-sudo apt-get install -y libicu-dev
-
-sudo apt-get install -y libpango1.0-dev
-sudo apt-get install -y libcairo2-dev
-```
-
 ### Install Leptonica 1.74
 #### Install it from source code
 
