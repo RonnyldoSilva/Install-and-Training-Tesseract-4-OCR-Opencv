@@ -268,6 +268,9 @@ ln -s /usr/local/lib/python3.6/dist-packages/cv2.cpython-36m-x86_64-linux-gnu.so
 ### Test the OpenCV
 
 Download this repository, then unzip `RedEyeRemover.zip`. Go to inside it.
+```
+git clone https://github.com/RonnyldoSilva/Install-and-Training-Tesseract-4-OCR-Opencv.git
+```
 
 Test C++ code:
 ```
